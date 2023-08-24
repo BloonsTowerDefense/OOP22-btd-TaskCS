@@ -1,6 +1,6 @@
 using MartignaniDaniele.entity;
 
-namespace MartignaniDanieleTest
+namespace MartignaniDaniele
 {
     [TestClass]
     public class BloonImplTest
