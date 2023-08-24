@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using penazziRiccardo.src.utils;
 
 namespace penazziRiccardo.src.map
@@ -38,7 +35,7 @@ namespace penazziRiccardo.src.map
 
         private void LoadPath(string source, bool test)
         {
-            string realSource = test ? "resources/bloonsPath.txt" : $"/map/{source}/bloonsPath.txt";
+            string realSource = test ? "C:\\Users\\penaz\\Source\\Repos\\TaskCS\\penazziRiccardo\\bloonsPath.txt" : $"/map/{source}/bloonsPath.txt";
 
             try
             {
