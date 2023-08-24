@@ -2,8 +2,6 @@
 
 namespace MartignaniDaniele.entity
 {
-    // An enumeration representing different types of Bloons in the tower defense game.
-    // Each BloonType specifies its attributes such as speed, health, money, and associated image.
     public enum BloonType
     {
         RedBloon,

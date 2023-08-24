@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MartignaniDaniele.utils
+﻿namespace MartignaniDaniele.utils
 {
     public class Position
     {
