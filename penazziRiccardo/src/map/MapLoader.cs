@@ -1,20 +1,14 @@
 namespace penazziRiccardo.src.map
 {
-    /// <summary>
-    /// This class implements the <see cref="IMapLoader"/> interface.
-    /// </summary>
     public class MapLoader : IMapLoader
     {
-        /// <inheritdoc />
         public int[,] LoadMap(string mapName)
         {
-            Console.WriteLine("Sono loadMap");
             int[,] ret = new int[MapPanel.GAME_COL, MapPanel.GAME_ROW];
 
             try
             {
-                string filePath = mapName; // Inserisci il percorso completo del file
-                Console.WriteLine("Provo ad aprire il file: " + filePath);
+                string filePath = mapName;
                 
                 if (!File.Exists(filePath))
                 {
