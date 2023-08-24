@@ -1,6 +1,4 @@
-﻿using MartignaniDaniele.entity;
-
-namespace MartignaniDaniele.entity
+﻿namespace MartignaniDaniele.entity
 {
     public interface IBloon : IEntity
     {

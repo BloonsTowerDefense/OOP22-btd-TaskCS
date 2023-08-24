@@ -1,9 +1,6 @@
-﻿using MartignaniDaniele.entity;
-using MartignaniDaniele.utils;
-
-namespace MartignaniDaniele.entity
+﻿namespace MartignaniDaniele.entity
 {
-    
+
     public class BloonImpl : EntityImpl, IBloon
     {
         public double Health { get; set; }
