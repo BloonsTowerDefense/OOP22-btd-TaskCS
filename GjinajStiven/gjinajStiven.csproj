@@ -1,0 +1,81 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+        <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BitmapToVector.SkiaSharp" Version="1.16.3" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0"/>
+        <PackageReference Include="MSTest.TestAdapter" Version="2.2.10"/>
+        <PackageReference Include="MSTest.TestFramework" Version="2.2.10"/>
+        <PackageReference Include="coverlet.collector" Version="3.2.0"/>
+        <PackageReference Include="System.Drawing.Common" Version="8.0.0-preview.7.23375.5" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="bullet.png" />
+      <None Remove="towersSprite\blackAdam\Upgrade0\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\blackAdam\Upgrade0\sprite1.png" />
+      <None Remove="towersSprite\blackAdam\Upgrade0\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\blackAdam\Upgrade0\sprite0.png" />
+      <None Remove="towersSprite\blackAdam\Upgrade0\sprite2.png" />
+      <EmbeddedResource Include="towersSprite\blackAdam\Upgrade0\sprite2.png" />
+      <None Remove="towersSprite\blackAdam\Upgrade1\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\blackAdam\Upgrade1\sprite0.png" />
+      <None Remove="towersSprite\blackAdam\Upgrade1\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\blackAdam\Upgrade1\sprite1.png" />
+      <None Remove="towersSprite\blackAdam\Upgrade1\sprite2.png" />
+      <EmbeddedResource Include="towersSprite\blackAdam\Upgrade1\sprite2.png" />
+      <None Remove="towersSprite\deadColossus\Upgrade0\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\deadColossus\Upgrade0\sprite0.png" />
+      <None Remove="towersSprite\deadColossus\Upgrade0\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\deadColossus\Upgrade0\sprite1.png" />
+      <None Remove="towersSprite\deadColossus\Upgrade0\sprite2.png" />
+      <EmbeddedResource Include="towersSprite\deadColossus\Upgrade0\sprite2.png" />
+      <None Remove="towersSprite\deadColossus\Upgrade1\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\deadColossus\Upgrade1\sprite0.png" />
+      <None Remove="towersSprite\deadColossus\Upgrade1\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\deadColossus\Upgrade1\sprite1.png" />
+      <None Remove="towersSprite\deadColossus\Upgrade1\sprite2.png" />
+      <EmbeddedResource Include="towersSprite\deadColossus\Upgrade1\sprite2.png" />
+      <None Remove="towersSprite\powerEnhancer\Upgrade0\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\powerEnhancer\Upgrade0\sprite0.png" />
+      <None Remove="towersSprite\powerEnhancer\Upgrade0\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\powerEnhancer\Upgrade0\sprite1.png" />
+      <None Remove="towersSprite\powerEnhancer\Upgrade1\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\powerEnhancer\Upgrade1\sprite0.png" />
+      <None Remove="towersSprite\powerEnhancer\Upgrade1\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\powerEnhancer\Upgrade1\sprite1.png" />
+      <None Remove="towersSprite\rangeEnhancer\Upgrade0\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\rangeEnhancer\Upgrade0\sprite0.png" />
+      <None Remove="towersSprite\rangeEnhancer\Upgrade0\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\rangeEnhancer\Upgrade0\sprite1.png" />
+      <None Remove="towersSprite\rangeEnhancer\Upgrade1\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\rangeEnhancer\Upgrade1\sprite0.png" />
+      <None Remove="towersSprite\rangeEnhancer\Upgrade1\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\rangeEnhancer\Upgrade1\sprite1.png" />
+      <None Remove="towersSprite\voldelife\Upgrade0\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\voldelife\Upgrade0\sprite0.png" />
+      <None Remove="towersSprite\voldelife\Upgrade0\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\voldelife\Upgrade0\sprite1.png" />
+      <None Remove="towersSprite\voldelife\Upgrade0\sprite2.png" />
+      <EmbeddedResource Include="towersSprite\voldelife\Upgrade0\sprite2.png" />
+      <None Remove="towersSprite\voldelife\Upgrade1\sprite0.png" />
+      <EmbeddedResource Include="towersSprite\voldelife\Upgrade1\sprite0.png" />
+      <None Remove="towersSprite\voldelife\Upgrade1\sprite1.png" />
+      <EmbeddedResource Include="towersSprite\voldelife\Upgrade1\sprite1.png" />
+      <None Remove="towersSprite\voldelife\Upgrade1\sprite2.png" />
+      <EmbeddedResource Include="towersSprite\voldelife\Upgrade1\sprite2.png" />
+      <None Remove="towersSprite\bullet.png" />
+      <EmbeddedResource Include="towersSprite\bullet.png" />
+    </ItemGroup>
+
+
+
+</Project>
