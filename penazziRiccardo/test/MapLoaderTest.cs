@@ -26,7 +26,12 @@ namespace penazziRiccardo.test
         public void TestLoadMap()
         {
             IMapLoader mapLoader = new MapLoader();
-            int[,] actualMap = mapLoader.LoadMap("C:\\Users\\penaz\\Source\\Repos\\TaskCS\\penazziRiccardo\\mapTest01.txt");
+
+            string basePath = Directory.GetCurrentDirectory();
+            string relativePath = "mapTest01.txt"; // Percorso relativo al file
+            string fullPath = System.IO.Path.Combine(basePath, relativePath);
+
+            int[,] actualMap = mapLoader.LoadMap(relativePath);
 
             Assert.IsNotNull(actualMap);
             Assert.AreEqual(_expectedMap.GetLength(0), actualMap.GetLength(0));

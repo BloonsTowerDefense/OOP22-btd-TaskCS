@@ -35,7 +35,7 @@ namespace penazziRiccardo.src.map
 
         private void LoadPath(string source, bool test)
         {
-            string realSource = test ? "C:\\Users\\penaz\\Source\\Repos\\TaskCS\\penazziRiccardo\\bloonsPath.txt" : $"/map/{source}/bloonsPath.txt";
+            string realSource = test ? "bloonsPathTest.txt" : $"/map/{source}/bloonsPath.txt";
 
             try
             {
