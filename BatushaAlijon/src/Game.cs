@@ -1,89 +1,88 @@
 ﻿using System;
 using System.Threading;
-using System.Diagnostics;
 
 namespace BatushaAlijon.src
-
-public class Game
 {
-    private static readonly long FrameTimeValue = 200; // 200 ms per frame
-    private readonly long frameTime;
-    private string gameCondition; 
-
-    public Game()
+    public class Game
     {
-        this.frameTime = FrameTimeValue;
-        this.gameCondition = "MENU";
-    }
+        private static readonly long FrameTimeValue = 200; // 200 ms per frame
+        private readonly long frameTime;
+        public GameCondition gameCondition { get; private set; }  
 
-    private void WaitForNextFrame(long currentTime)
-    {
-        long dt = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds - currentTime;
-        if (dt < frameTime)
+        public Game()
         {
-            try
+            this.frameTime = FrameTimeValue;
+            this.gameCondition = GameCondition.MENU;
+        }
+
+        private void WaitForNextFrame(long currentTime)
+        {
+            long dt = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds - currentTime;
+            if (dt < frameTime)
             {
-                Thread.Sleep((int)(frameTime - dt));
+                try
+                {
+                    Thread.Sleep((int)(frameTime - dt));
+                }
+                catch (ThreadInterruptedException e)
+                {
+                    Console.WriteLine($"Exception: {e}");
+                }
             }
-            catch (ThreadInterruptedException e)
+        }
+
+        public void StartGame()
+        {
+            long lastUpdateTime = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds;
+            while (RunningGame())
             {
-                Console.WriteLine($"Exception: {e}");
+                long currentTime = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds;
+                long elapsedTime = currentTime - lastUpdateTime;
+                Update(elapsedTime);
+                WaitForNextFrame(currentTime);
+                lastUpdateTime = currentTime;
+                Render();
             }
         }
-    }
 
-    public void StartGame()
-    {
-        long lastUpdateTime = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds;
-        while (RunningGame())
+        public bool RunningGame()
         {
-            long currentTime = (long)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalMilliseconds;
-            long elapsedTime = currentTime - lastUpdateTime;
-            Update(elapsedTime);
-            WaitForNextFrame(currentTime);
-            lastUpdateTime = currentTime;
-            Render();
+            return this.gameCondition != GameCondition.EXIT;
         }
-    }
 
-    public bool RunningGame()
-    {
-        return this.gameCondition != "EXIT";
-    }
-
-    public void Render()
-    {
-        switch (this.gameCondition)
+        public void Render()
         {
-            case "MENU":
-                // Render menu
-                break;
-            case "PLAY":
-                // Render game
-                break;
-            case "OVER":
-                // Render game over
-                break;
-            default:
-                break;
+            switch (this.gameCondition)
+            {
+                case GameCondition.MENU:
+                    // Render menu
+                    break;
+                case GameCondition.PLAY:
+                    // Render game
+                    break;
+                case GameCondition.OVER:
+                    // Render game over
+                    break;
+                default:
+                    break;
+            }
         }
-    }
 
-    public void Update(long elapsedTime)
-    {
-        switch (this.gameCondition)
+        public void Update(long elapsedTime)
         {
-            case "PLAY":
-                // Update the game state
-                break;
-            default:
-                break;
+            switch (this.gameCondition)
+            {
+                case GameCondition.PLAY:
+                    // Update game state
+                    break;
+                default:
+                    break;
+            }
         }
-    }
 
-    public void RestartGame()
-    {
-        this.gameCondition = "MENU";
-        // Restart the game
+        public void RestartGame()
+        {
+            this.gameCondition = GameCondition.MENU;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BatushaAlijon.src;  
 using System.Threading.Tasks;
 
 namespace BatushaAlijon.test
@@ -23,14 +24,15 @@ namespace BatushaAlijon.test
         [TestMethod]
         public void TestUpdateMethod()
         {
-            game.Update(100);  
+           
+            game.Update(100);
         }
 
         [TestMethod]
         public void TestRestartGame()
         {
-            game.RestartGame();  
-            Assert.AreEqual(initialState, game.SomeState);
+            game.RestartGame();
+            Assert.AreEqual(GameCondition.MENU, game.gameCondition);  
         }
 
         [TestMethod]
@@ -41,10 +43,11 @@ namespace BatushaAlijon.test
 
             // Let the game run for a short period
             await Task.Delay(500);  // 500 ms
-            Assert.AreEqual(expectedStateAfter500ms, game.SomeState);
 
-         
-            game.GameCondition = "EXIT";
+            Assert.AreEqual(GameCondition.MENU, game.gameCondition);  
+
+            // Exit the game
+            game.gameCondition = GameCondition.EXIT;  
         }
     }
 }
